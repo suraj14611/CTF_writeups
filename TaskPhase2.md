@@ -1,18 +1,22 @@
-# Compute Sum (Question 1)
+# Assembly Programs
 
-This is a assembly program that computes the sum of 1 and 2 and prints the result to stdout
+## Question 1: Compute Sum
 
-## Build
+This is an assembly program that computes the sum of `1` and `2` and prints the result to standard output.
 
+### Build
+```bash
 nasm -f elf32 sum.asm -o sum.o
 ld -m elf_i386 sum.o -o sum
+```
 
-## Run
-
+### Run
+```bash
 ./sum
+```
 
-## Source code
-
+### Source Code
+```asm
 section .data
     buffer db 0
     nl db 10
@@ -21,11 +25,9 @@ section .text
     global _start
 
 _start:
-   
     mov eax, 1
     add eax, 2        
 
-    
     add eax, '0'      
     mov [buffer], al  
 
@@ -47,28 +49,32 @@ _start:
     mov eax, 1
     xor ebx, ebx
     int 0x80
+```
 
-## Output
-
+### Output
+```
 3
+```
 
 ---
 
-# Capitalize String (Question 2) 
+## Question 2: Capitalize String
 
-This is a assembly program that reads a line from standard input, converts all lowercase letters to uppercase, and prints the result.
+This is an assembly program that reads a line from standard input, converts all lowercase letters to uppercase, and prints the result.
 
-## Build
-
+### Build
+```bash
 nasm -f elf32 capt_string.asm -o capt_string.o
 ld -m elf_i386 capt_string.o -o string
+```
 
-## Run
-
+### Run
+```bash
 ./string
+```
 
-## Source code
-
+### Source Code
+```asm
 section .data
     newline db 10
 
@@ -129,7 +135,10 @@ exit_program:
     mov eax, 1
     xor ebx, ebx
     int 0x80
-## Output
+```
 
+### Output
+```
 manipal information security team
 MANIPAL INFORMATION SECURITY TEAM
+```
